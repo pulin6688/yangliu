@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">  
+<Configure>
+
+	<New id="master" class="org.eclipse.jetty.plus.jndi.Resource">
+	    <Arg>jdbc/master</Arg>
+	    <Arg>
+	        <New class="org.apache.commons.dbcp.BasicDataSource">
+	            <Set name="driverClassName">com.mysql.jdbc.Driver</Set>  
+	            <Set name="url">jdbc:mysql://192.168.174.129:3306/calm_dev?useUnicode=true&amp;characterEncoding=utf-8</Set>
+	            <Set name="username">root</Set>  
+	            <Set name="password">root</Set>  
+	            <Set name="initialSize">2</Set>  
+	            <Set name="maxActive">5</Set>  
+	            <Set name="minIdle">2</Set>  
+	            <Set name="maxIdle">5</Set>  
+	            <Set name="maxWait">10000</Set>  
+	            <Set name="validationQuery">select 1</Set>
+	            <Set name="testOnBorrow">true</Set>  
+	        </New>  
+	    </Arg>  
+	</New>
+	
+	<New id="slave" class="org.eclipse.jetty.plus.jndi.Resource">  
+	    <Arg>jdbc/slave</Arg>  
+	    <Arg>  
+	        <New class="org.apache.commons.dbcp.BasicDataSource">
+	            <Set name="driverClassName">com.mysql.jdbc.Driver</Set>  
+	            <Set name="url">jdbc:mysql://192.168.174.129:3306/calm_dev?useUnicode=true&amp;characterEncoding=utf-8</Set>
+	            <Set name="username">root</Set>  
+	            <Set name="password">root</Set> 
+	            <Set name="initialSize">2</Set>  
+	            <Set name="maxActive">5</Set>  
+	            <Set name="minIdle">2</Set>
+	            <Set name="maxIdle">5</Set>  
+	            <Set name="maxWait">10000</Set>
+	            <Set name="validationQuery">select 1</Set> 
+	            <Set name="testOnBorrow">true</Set>   
+	            <Set name="defaultReadOnly">true</Set>
+	        </New>  
+	    </Arg>  
+	</New>
+	
+</Configure>

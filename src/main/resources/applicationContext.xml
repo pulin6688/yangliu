@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd 
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    
+    <!-- 导入properties配置文件 -->
+    <bean  id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- 设置注入扫描包的根目录 -->
+    <context:component-scan base-package="com.yangliu"/>
+
+    <!-- 自动启动Spring MVC的注解功能 -->
+    <mvc:annotation-driven/>
+
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/WEB-INF/view/"></property>
+        <!-- 视图文件的前缀 -->
+        <property name="suffix" value=".jsp"></property>
+        <!-- 视图文件的后缀名 -->
+    </bean>
+    
+    
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="gsonHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="gsonHttpMessageConverter" class="org.springframework.http.converter.json.GsonHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+    
+        
+ <!--     <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>  -->
+
+
+    <!--通知spring使用cglib而不是jdk的来生成代理方法 AOP可以拦截到Controller -->
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+    
+    
+    
+    <import resource="applicationContextDataSource.xml"/>
+
+
+</beans>
