@@ -55,8 +55,8 @@ public class IndexService {
 			logger.error("e:",e);
 		}finally{
 			long e = System.currentTimeMillis();
-			//logger.info("{}",(e-s));
-			System.out.println(e-s);
+			logger.info("{}",(e-s));
+			//System.out.println(e-s);
 		}
 		return null;
 	}
@@ -81,8 +81,8 @@ public class IndexService {
 			logger.error("e:",e);
 		}finally{
 			long e = System.currentTimeMillis();
-			//logger.info("{}",(e-s));
-			System.out.println(e-s);
+			logger.info("{}",(e-s));
+			//System.out.println(e-s);
 		}
 		return null;
 	}
