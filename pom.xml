@@ -28,9 +28,9 @@
         <jsp.version>2.0</jsp.version>
         <junit.version>4.12</junit.version>
         <servlet.version>3.1.0</servlet.version>
-        <profile.env>dev</profile.env>
         <jetty.port>80</jetty.port>
         <java.version>1.8</java.version>
+         <profile.env>yangliu</profile.env>
         
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 	</properties>
