@@ -286,8 +286,16 @@
 	
 	
 	
-<!-- 	<repositories>
-	
+ 	<repositories>
+ 	
+ 		<!--下载阿里官方的镜像地址-->
+ 		<repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        
+        
+		<!-- 	
 		<repository>
 			<id>kry-nexus</id>
 			<url>http://nexus.shishike.com/nexus/content/groups/public/</url>
@@ -295,7 +303,6 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
-
 		<repository>
 			<id>kry-nexus-snapshots</id>
 			<url>http://nexus.shishike.com/nexus/content/repositories/snapshots/</url>
@@ -305,7 +312,6 @@
 				<checksumPolicy>warn</checksumPolicy>
 			</snapshots>
 		</repository>
-		
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -321,9 +327,13 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
+		</repository> 
+		-->
+		
 	</repositories>
+	
 
+	<!-- 
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -343,6 +353,11 @@
         <defaultGoal>package</defaultGoal>
         <finalName>yangliu</finalName>
         <plugins>
+        	<plugin>
+				<groupId>org.testng.xslt</groupId>
+				<artifactId>testng-xslt-maven-plugin-test</artifactId>
+				<version>0.0</version>
+			</plugin>
         	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>

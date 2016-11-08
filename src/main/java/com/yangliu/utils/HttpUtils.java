@@ -150,6 +150,7 @@ public class HttpUtils {
 			httppost.setEntity(entity);
 			response = httpClient.execute(httppost);
 			int statusCode = response.getStatusLine().getStatusCode();//http解析状态码 200表示成功，其他表示失败
+			System.out.println("statusCode:"+statusCode);
 			if(statusCode == 200){
 				HttpEntity responseEntity = response.getEntity();
 				String responseStr = EntityUtils.toString(responseEntity, "UTF-8");
