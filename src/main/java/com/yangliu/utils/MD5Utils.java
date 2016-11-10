@@ -36,6 +36,33 @@ public class MD5Utils {
   
     } 
     
+    
+    public static String md5(String inputText) {
+		if (inputText == null || "".equals(inputText.trim())) {
+			throw new IllegalArgumentException("inputText not null.");
+		}
+		String encryptText = null;
+		try {
+			MessageDigest m = MessageDigest.getInstance("md5");
+			m.update(inputText.getBytes("UTF8"));
+			byte s[] = m.digest();
+			return hex(s);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return encryptText;
+	}
+    
+	private static String hex(byte[] arr) {
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < arr.length; ++i) {
+			sb.append(Integer.toHexString((arr[i] & 0xFF) | 0x100).substring(1,3));
+		}
+		return sb.toString();
+	}
+	
+	
+    
     /** 
      * 加密解密算法 执行一次加密，两次解密 
      */   

@@ -30,6 +30,8 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @author pul@shishike.com
  * http post 请求工具类
@@ -194,11 +196,37 @@ public class HttpUtils {
 					String key = keys.next();
 					Object value = data.get(key);
 					//logger.info(key+":"+value);
-					sb.append("&").append(key).append("=").append(value);
-					NameValuePair param = new BasicNameValuePair(key, value.toString());
-					pairs.add(param);
+					
+					if("".equals(value.toString())){
+						sb.append(key).append("=");
+					}else{
+						sb.append(key).append("=").append(value);
+					}
+					sb.append("&");
+					
+					
+					
+					if(value instanceof String){
+						//System.out.println(key+"="+value);
+						
+						NameValuePair param;
+						if("".equals(value.toString())){
+							 param = new BasicNameValuePair(key, "");
+						}else{
+							 param = new BasicNameValuePair(key, value.toString());
+						}
+						
+						pairs.add(param);
+					}else{
+						//System.out.println(key+"="+JSON.toJSONString(value));
+						NameValuePair param = new BasicNameValuePair(key, JSON.toJSONString(value));
+						pairs.add(param);
+					}
+					
+					
 				}
-				logger.info("httppostdata:"+sb.toString());
+				
+				//logger.info("httppostdata:"+sb.toString());
 				HttpEntity entity = new UrlEncodedFormEntity(pairs, "UTF-8");
 				//EntityUtils.toString(entity)
 				httppost.setEntity(entity);
