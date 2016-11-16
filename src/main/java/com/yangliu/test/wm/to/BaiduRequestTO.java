@@ -1,4 +1,4 @@
-package com.yangliu.test.baiduv3;
+package com.yangliu.test.wm.to;
 
 public class BaiduRequestTO {
     private String cmd;

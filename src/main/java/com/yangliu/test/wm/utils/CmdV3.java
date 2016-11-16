@@ -1,4 +1,4 @@
-package com.yangliu.test.baiduv3;
+package com.yangliu.test.wm.utils;
 
 import java.io.Serializable;
 import java.util.Iterator;
@@ -16,18 +16,21 @@ import com.yangliu.utils.MD5Utils;
 /**
  * 请求百度外卖接口参数封装
  */
-public class Cmd implements Serializable {
+public class CmdV3 implements Serializable {
 	
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 7043195043055224479L;
-	public static final Logger logger = LoggerFactory.getLogger(Cmd.class);
-    public final static String VERSION = "2";
-    public final static String VERSION_3 = "3";
+	public static final Logger logger = LoggerFactory.getLogger(CmdV3.class);
+    public final static String VERSION = "3";
     
-    private static final String account="65390";
-    private static final String secret="6f48db35eef9c822";
+//    private static final String account="65390";
+//    private static final String secret="6f48db35eef9c822";
+    
+    //鲜芋仙（百宜味）
+    private static final String account="65090";
+    private static final String secret="cf989e123388b572";
     
    
     public static final String URL = "http://api.waimai.baidu.com";
@@ -50,6 +53,9 @@ public class Cmd implements Serializable {
         }
         return result;
     }
+    
+    
+
     
     
     
@@ -87,34 +93,27 @@ public class Cmd implements Serializable {
 		return md5Sign;
 	}
 	
-	/**
-	 * 获取请求体
-	 */
-//	public static String getRequestSubmit(String cmd,TreeMap<String, Object> body) {
-//		TreeMap<String, Object> requestMap = getRequestMap(cmd, body);
-//		String md5Sign = getSign(requestMap);//计算sign的时候需要加上secret
-//		requestMap.put("sign", md5Sign);
-//		requestMap.remove("secret");//计算完sign后移除secret
-//		//String json = gson.toJson(requestMap);//计算
-//		String json = JSON.toJSONString(requestMap);
-//		logger.info("send to baiduwaimai data:"+json);
-//		return json;
-//	}
 	
-	public static TreeMap<String, Object> getRequestMap(String cmd, TreeMap<String, Object> body) {
+	
+	
+	
+	
+	
+	
+	public static TreeMap<String, Object> getRequestMap(String cmd,TreeMap<String, Object> body) {
 		TreeMap<String, Object> map = new TreeMap<String, Object>();
 		map.put("cmd", cmd);
-		map.put("timestamp", System.currentTimeMillis() / 1000);
-		map.put("version", VERSION);
+		map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
 		map.put("ticket", UUID.randomUUID().toString().toUpperCase());
+		map.put("version", VERSION);
 		map.put("body", body);
-		map.put("source", account);
+		map.put("source",account);
 		map.put("secret", secret);
 		return map;
 	}
 	
-	public static TreeMap<String, Object>  getRequestSubmitV3(String cmd, TreeMap<String, Object> body) {
-		TreeMap<String, Object> requestMap = getRequestMapV3(cmd, body);
+	public static TreeMap<String, Object>  getRequestSubmit(String cmd, TreeMap<String, Object> body) {
+		TreeMap<String, Object> requestMap = getRequestMap(cmd, body);
 		requestMap.put("encrypt", "");//百度外卖V3.0接口新增字段
 		String md5Sign = getSign(requestMap);//计算sign的时候需要加上secret
 		requestMap.put("sign", md5Sign);
@@ -127,23 +126,7 @@ public class Cmd implements Serializable {
 		return requestMap;
 	}
 	
-	public static TreeMap<String, Object> getRequestMapV3(String cmd,TreeMap<String, Object> body) {
-		TreeMap<String, Object> map = new TreeMap<String, Object>();
-		map.put("cmd", cmd);
-		
-		map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-		map.put("ticket", UUID.randomUUID().toString().toUpperCase());
-		
-//		map.put("timestamp", "1478758252");
-//		map.put("ticket", "42A81E7D-B15B-4D59-BC4D-E91A2BA7DD35");
-		
-		map.put("version", VERSION_3);
-		map.put("body", body);
-		map.put("source",account);
-		map.put("secret", secret);
-
-		return map;
-	}
+	
 	
 	/**
 	 * 获取响应体

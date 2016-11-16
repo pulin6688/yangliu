@@ -1,4 +1,4 @@
-package com.yangliu.test;
+package com.yangliu.test.wm;
 
 import java.io.File;
 
@@ -6,7 +6,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.yangliu.utils.HttpUtils;
 
-public class BaiduwaimaiShopCreateTest {
+public class YanshouByTestEnvTest {
 	private static final String IP_DEV = "http://172.16.30.10:9120";
 	private static final String IP_TEST = "http://172.16.30.10:9220";
 	
@@ -32,9 +32,9 @@ public class BaiduwaimaiShopCreateTest {
 		//showDish();
 		
 		
-		orderConfirm();
+		//orderConfirm();
 		//orderComplete();
-		//orderCancel();
+		orderCancel();
 		//orderStatusPush();
 	}
 	
