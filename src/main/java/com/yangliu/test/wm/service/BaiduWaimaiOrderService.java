@@ -31,10 +31,10 @@ public class BaiduWaimaiOrderService {
 	public void orderComfirm(OrderCompleteByYanshouTO to){
 		String cmd = ORDER_CONFIRM;
 		logger.info("cmd:{}",cmd);
-		Long shopId = to.getShop_id();
+		//Long shopId = to.getShop_id();
 		try {
 			TreeMap<String, Object> reqMap = new TreeMap<String, Object>();
-			reqMap.put("order_id", shopId);
+			reqMap.put("order_id", to.getOrder_id());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
 			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
@@ -65,7 +65,10 @@ public class BaiduWaimaiOrderService {
 		logger.info("cmd:{}",cmd);
 		try {
 			TreeMap<String, Object> reqMap = new TreeMap<String, Object>();
+			reqMap.put("shop_id", to.getShop_id());
 			reqMap.put("order_id", to.getOrder_id());
+			reqMap.put("reason", to.getReason());
+			reqMap.put("type", to.getType());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
 		} catch (Exception e) {

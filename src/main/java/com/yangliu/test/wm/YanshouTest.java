@@ -43,7 +43,7 @@ public class YanshouTest {
 		//updateDishCategory();
 		
 		
-		createDish();
+		//createDish();
 		//updateDish();
 		//deleteDish();
 		//showDish();
@@ -51,7 +51,7 @@ public class YanshouTest {
 		
 		//orderConfirm();
 		//orderComplete();
-		//orderCancel();
+		orderCancel();
 		//orderStatusPush();
 	}
 	
@@ -150,6 +150,7 @@ public class YanshouTest {
 	}
 	public static void orderCancel() throws Exception {
 		String json = FileUtils.readFileToString(new File("D:/baiduwaimai/orderCancel.txt"), "gbk");
+		//System.out.println(json);
 		OrderCancelByYanshouTO to = JSON.parseObject(json, OrderCancelByYanshouTO.class);
 		baiduWaimaiOrderService.orderCancel(to);
 	}

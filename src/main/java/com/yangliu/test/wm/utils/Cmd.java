@@ -28,8 +28,18 @@ public class Cmd implements Serializable {
 //    private static final String secret="6f48db35eef9c822";
     
     //鲜芋仙（百宜味）
-    private static final String account="65090";
-    private static final String secret="cf989e123388b572";
+   // private static final String account="65090";
+    //private static final String secret="cf989e123388b572";
+    
+//    private static final String account="65487";
+//    private static final String secret="85bff21a43cb8da6";
+    
+    
+    
+    //木岚饮品测试账号
+    private static final String account="65079";
+    private static final String secret="9b8077a370854713";
+   
     
    
     public static final String URL = "http://api.waimai.baidu.com";
