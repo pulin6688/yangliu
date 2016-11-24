@@ -105,7 +105,7 @@ public class BaiduWaimaiOrderService {
 	}
 	
 	public void orderGetV3(OrderCompleteByYanshouTO to){
-		TreeMap<String, Object> body = new TreeMap<>();
+		TreeMap<String, Object> body = new TreeMap();
 		body.put("order_id", "14785798481663");
 		body = CmdV3.getRequestSubmit("order.get",body);
 		try {

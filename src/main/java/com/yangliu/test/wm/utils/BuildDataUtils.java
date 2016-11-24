@@ -39,9 +39,9 @@ public class BuildDataUtils {
 		reqMap.put("county", to.getCounty());
 		reqMap.put("address", to.getAddress());
 
-		List<TreeMap<String, String>> categorys = new ArrayList<>();
+		List<TreeMap<String, String>> categorys = new ArrayList();
 		for(CategorysTO category : to.getCategorys()){
-			TreeMap<String, String> cateMap = new TreeMap<>();
+			TreeMap<String, String> cateMap = new TreeMap();
 			cateMap.put("category1", category.getCategory1());
 			cateMap.put("category2", category.getCategory2());
 			cateMap.put("category3", category.getCategory3());
@@ -54,9 +54,9 @@ public class BuildDataUtils {
 		reqMap.put("longitude", to.getLongitude());// 经度
 		reqMap.put("latitude", to.getLatitude());// 纬度
 
-		List<TreeMap<String, String>> businessTime = new ArrayList<>();
+		List<TreeMap<String, String>> businessTime = new ArrayList();
 		for(BusinessTimeTO time : to.getBusiness_time()){
-			TreeMap<String, String> timeMap = new TreeMap<>();
+			TreeMap<String, String> timeMap = new TreeMap();
 			timeMap.put("start", time.getStart());
 			timeMap.put("end", time.getEnd());
 			businessTime.add(timeMap);
@@ -68,28 +68,28 @@ public class BuildDataUtils {
 		
 		
 		for(DeliveryRegionTO regionTO : to.getDelivery_region()){
-			List<TreeMap<String, String>> regionList = new ArrayList<>();
+			List<TreeMap<String, String>> regionList = new ArrayList();
 			
 			List<List<DeliveryRegion>>  s = regionTO.getRegion();
 			for(int i=0;i<s.size();i++){
 				List<DeliveryRegion> k = s.get(i);
 				for(DeliveryRegion r : k){
-					TreeMap<String, String> region = new TreeMap<>();
+					TreeMap<String, String> region = new TreeMap();
 					region.put("latitude",r.getLatitude());
 					region.put("longitude", r.getLongitude());
 					regionList.add(region);
 				}
 			}
 			
-			TreeMap<String, Object> deliveryRegion = new TreeMap<>();
+			TreeMap<String, Object> deliveryRegion = new TreeMap();
 			deliveryRegion.put("name", regionTO.getName());
 			deliveryRegion.put("delivery_time",regionTO.getDelivery_time());//
 			deliveryRegion.put("delivery_fee", regionTO.getDelivery_fee());//分，配送费只支持整元
-			List<List<TreeMap<String, String>>> regionListAll = new ArrayList<>();
+			List<List<TreeMap<String, String>>> regionListAll = new ArrayList();
 			regionListAll.add(regionList);
 			deliveryRegion.put("region", regionListAll);
 			
-			List<TreeMap<String, Object>> deliveryRegions = new ArrayList<>();
+			List<TreeMap<String, Object>> deliveryRegions = new ArrayList();
 			deliveryRegions.add(deliveryRegion);
 			reqMap.put("delivery_region", deliveryRegions);
 		}
