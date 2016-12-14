@@ -1,0 +1,105 @@
+#查询开通美团团购 美团闪惠的商户id
+select shop_identy from partner_third_match where source in (-11,-12) GROUP BY shop_identy;
+
+
+
+select
+	b.shop_identy        as '商户id',
+	e.commercialName     as '商户名称',
+    sum(c.face_amount)   as '面额',
+    sum(c.useful_amount) as '实付',
+    sum(c.change_amount) as '找零金额',
+    sum(d.mount)         as '促销金额',
+	count(c.id)          as '团购单数量'
+from payment a
+inner join trade           b on a.relate_id = b.id
+inner join payment_item    c on a.id = c.payment_id
+# trade_promotion促销
+inner join trade_promotion d on a.relate_id=d.trade_id
+inner join commercial      e on e.commercialID=b.shop_identy
+where c.shop_identy in (
+		810004815,
+		810005040,
+		810005454,
+		810005815,
+		810008044,
+		810008380,
+		810008698,
+		810009432,
+		810009737,
+		810011779,
+		810012755,
+		810014090,
+		810014392,
+		810014950,
+		810015342
+)
+group by b.shop_identy;
+
+
+
+
+
+
+#select a.id,a.trade_amount,a.trade_no,a.server_create_time,b.third_tran_no from trade a inner join trade_extra b on a.id=b.trade_id where a.id=41491866;
+
+
+
+SELECT
+	a.id  as 'paymentid(支付id)',
+	b.id  as 'tradeid(订单id)',
+	b.shop_identy '商户id',
+    c.face_amount as 'c.face_amount(实付)',
+    c.change_amount as 'c.change_amount(找零金额)',
+    d.mount as 'd.mount(促销金额)',
+    c.pay_mode_name,
+    a.server_create_time
+FROM payment a
+inner join trade b ON a.relate_id = b.id
+inner join payment_item c ON a.id = c.payment_id
+inner join trade_promotion d on a.relate_id=d.trade_id
+where c.shop_identy = 810012755;
+
+
+
+
+SELECT
+	a.shop_identy,
+	sum(a.face_amount) AS '面额',
+	sum(a.useful_amount) AS '实付',
+	sum(a.change_amount) AS '找零金额',
+	count(a.id) AS '订单数量',
+	#sum(c.market_price) as '市场价',
+	#sum(c.price) as '销售价',
+	a.pay_mode_name
+FROM
+	payment_item a
+INNER  JOIN payment b ON a.payment_id = b.id
+# groupon 团购劵
+#INNER JOIN groupon c ON a.relate_id=c.deal_id
+WHERE
+	a.shop_identy IN (
+		810004815,
+		810005040,
+		810005454,
+		810005815,
+		810008044,
+		810008380,
+		810008698,
+		810009432,
+		810009737,
+		810011779,
+		810012755,
+		810014090,
+		810014392,
+		810014950,
+		810015342
+	)
+AND a.server_create_time >= '2016-11-01 00:00:00'
+AND a.server_create_time <= now()
+AND b.payment_type = 1
+AND a.pay_mode_id IN (-23 ,-24)
+#-23 -24 美团团购 美团闪惠
+GROUP BY
+	a.shop_identy;
+

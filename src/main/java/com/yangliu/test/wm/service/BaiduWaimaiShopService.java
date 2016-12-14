@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.yangliu.test.wm.to.shop.CreateShopTO;
 import com.yangliu.test.wm.to.shop.ModifyShopStatusTO;
+import com.yangliu.test.wm.to.shop.ShopPicUploadNewTO;
 import com.yangliu.test.wm.to.shop.ShopPicUploadTO;
 import com.yangliu.test.wm.utils.BuildDataUtils;
 import com.yangliu.test.wm.utils.Cmd;
@@ -28,6 +29,8 @@ public class BaiduWaimaiShopService {
 	private static final String SHOP_CLOSE   = "shop.close";
 	private static final String SHOP_OFFLINE = "shop.offline";
 	private static final String SHOP_PIC_UPLOAD = "shop.pic.upload";//商户资质图片上传
+	private static final String SHOP_PIC_UPLOAD_NEW = "shop.aptitude.upload";//商户资质图片上传 new
+	
 	
 	
 	private static Logger logger =  LoggerFactory.getLogger(BaiduWaimaiShopService.class);
@@ -96,6 +99,20 @@ public class BaiduWaimaiShopService {
 	 */
 	public void shopPicUpload(ShopPicUploadTO to){
 		String cmd = SHOP_PIC_UPLOAD;
+		logger.info("cmd:{}",cmd);
+		try {
+			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
+			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
+			logger.info("jsonRequestBody:{}",jsonRequestBody);
+			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+		}catch(Exception e){
+			logger.error("百度外卖验收测试商户失败，error:", e);
+		}
+		
+	}
+	
+	public void shopPicUploadNew(ShopPicUploadNewTO to){
+		String cmd = SHOP_PIC_UPLOAD_NEW;
 		logger.info("cmd:{}",cmd);
 		try {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);

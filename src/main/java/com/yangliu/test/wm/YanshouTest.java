@@ -16,6 +16,7 @@ import com.yangliu.test.wm.to.order.OrderCompleteByYanshouTO;
 import com.yangliu.test.wm.to.order.OrderStatusPushByYanshouTO;
 import com.yangliu.test.wm.to.shop.CreateShopTO;
 import com.yangliu.test.wm.to.shop.ModifyShopStatusTO;
+import com.yangliu.test.wm.to.shop.ShopPicUploadNewTO;
 import com.yangliu.test.wm.to.shop.ShopPicUploadTO;
 
 public class YanshouTest {
@@ -36,6 +37,7 @@ public class YanshouTest {
 		//offlineShop();
 		//closeShop();
 		//picUpload();
+		picUploadNew();
 		
 		
 		
@@ -51,7 +53,7 @@ public class YanshouTest {
 		
 		//orderConfirm();
 		//orderComplete();
-		orderCancel();
+		//orderCancel();
 		//orderStatusPush();
 	}
 	
@@ -89,6 +91,12 @@ public class YanshouTest {
 		String json = FileUtils.readFileToString(new File("D:/baiduwaimai/picUpload.txt"), "gbk");
 		ShopPicUploadTO to = JSON.parseObject(json, ShopPicUploadTO.class);
 		baiduWaimaiShopService.shopPicUpload(to);
+	}
+	
+	public static void picUploadNew() throws Exception {
+		String json = FileUtils.readFileToString(new File("D:/baiduwaimai/picUploadNew.txt"), "gbk");
+		ShopPicUploadNewTO to = JSON.parseObject(json, ShopPicUploadNewTO.class);
+		baiduWaimaiShopService.shopPicUploadNew(to);
 	}
 	
 	

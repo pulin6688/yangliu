@@ -24,21 +24,35 @@ public class Cmd implements Serializable {
 	public static final Logger logger = LoggerFactory.getLogger(Cmd.class);
     public final static String VERSION = "2";
     
+//  private static final String account="65487";
+//  private static final String secret="85bff21a43cb8da6";
+    
 //    private static final String account="65390";
 //    private static final String secret="6f48db35eef9c822";
     
     //鲜芋仙（百宜味）
    // private static final String account="65090";
     //private static final String secret="cf989e123388b572";
-    
-//    private static final String account="65487";
-//    private static final String secret="85bff21a43cb8da6";
-    
-    
+
     
     //木岚饮品测试账号
-    private static final String account="65079";
-    private static final String secret="9b8077a370854713";
+    //private static final String account="65079";
+    //private static final String secret="9b8077a370854713";
+    
+    //两江新区万里餐饮店测试验收店
+//    private static final String account="65065";
+//    private static final String secret="bda14595dfe0e438";
+    
+   
+    //湖南刘先生餐饮管理验收账号
+//    private static final String account="65055";
+//    private static final String secret="0d399cfe1fee198b";
+    
+    //德川家测试
+    private static final String account="65053";
+    private static final String secret="c7aaa2759d94952f";
+    
+   
    
     
    
