@@ -226,6 +226,13 @@ public class HttpUtils {
 					
 				}
 				
+				String nn = url+"?"+sb.toString();
+				if(nn.endsWith("&")){
+					nn = nn.substring(0, nn.lastIndexOf("&"));
+				}
+				
+				//System.out.println("url:     "+nn);
+				
 				//logger.info("httppostdata:"+sb.toString());
 				HttpEntity entity = new UrlEncodedFormEntity(pairs, "UTF-8");
 				//EntityUtils.toString(entity)

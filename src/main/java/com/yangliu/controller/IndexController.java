@@ -41,5 +41,11 @@ public class IndexController {
 		map.put("t", new Random().nextDouble()*10);	
 		return map;
 	}
+	
+	@RequestMapping(value = "message", method ={ RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Object message(@RequestParam(name="size",required=false) Integer size){
+		return indexService.message(size);
+	}
 
 }

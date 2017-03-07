@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx 
+	    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+   
+   
+    <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory" lazy-init="true">
+        <property name="brokerURL" value="${datasource.jms.broker.url}"/>
+        <property name="messagePrioritySupported" value="false"/>
+    </bean>
+
+   <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory" >
+        <property name="targetConnectionFactory" ref="amqConnectionFactory"/>
+        <property name="sessionCacheSize" value="10"/>
+    </bean>
+
+    <bean id="simpleMessageConverterAddMDC" class="com.yangliu.jms.SimpleMessageConverterAddMDC" />
+    
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="sessionTransacted" value="true" />
+        <property name="deliveryPersistent" value="true" />
+        <property name="messageConverter" ref="simpleMessageConverterAddMDC" />
+    </bean>
+    
+
+    
+    <bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="${datasource.jms.queue.testQueue}" />
+    </bean>
+    <bean id="testListener"  class="com.yangliu.jms.listener.TestListener" />
+    <bean id="gatewayDishListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer" lazy-init="false">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="testQueue" />
+        <property name="messageListener" ref="testListener" />
+        <property name="concurrency" value="1-5" />
+        <property name="sessionTransacted" value="true" />
+    </bean>
+    
+    
+
+	
+    
+   
+</beans>

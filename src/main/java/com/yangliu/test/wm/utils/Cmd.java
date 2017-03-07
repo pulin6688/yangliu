@@ -39,9 +39,22 @@ public class Cmd implements Serializable {
     //private static final String account="65079";
     //private static final String secret="9b8077a370854713";
     
+    
+    
+    
+    
+    
+    
     //两江新区万里餐饮店测试验收店
 //    private static final String account="65065";
 //    private static final String secret="bda14595dfe0e438";
+    
+  //两江新区万里餐饮店正式店
+    //private static final String account="30415";
+    //private static final String secret="78e6106da42b282d";
+    
+    
+    
     
    
     //湖南刘先生餐饮管理验收账号
@@ -49,10 +62,30 @@ public class Cmd implements Serializable {
 //    private static final String secret="0d399cfe1fee198b";
     
     //德川家测试
-    private static final String account="65053";
-    private static final String secret="c7aaa2759d94952f";
+//    private static final String account="65053";
+//    private static final String secret="c7aaa2759d94952f";
+    // 德川家API测试店
+//    private static final String account="65045";
+//    private static final String secret="196d02062fb1bec6";
     
-   
+    //王的炒饭API测试店  1887870435
+    //private static final String account="65017";
+    //private static final String secret="dd459b4ede2cd3f1";
+    
+    
+    
+    
+    //壹寿司API测试店
+//    private static final String account="65011";
+//    private static final String secret="e715da3525b6fac9";
+    
+    //广州巴先生面馆API测试店
+//    private static final String account="64978";
+//    private static final String secret="8330fdb8209e3d8b";
+    
+   //吃个汤API测试店
+    private static final String account="64973";
+    private static final String secret="eeaaa99ab6bebd34";
    
     
    

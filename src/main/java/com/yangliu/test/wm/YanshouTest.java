@@ -36,8 +36,12 @@ public class YanshouTest {
 		//openShop();
 		//offlineShop();
 		//closeShop();
+		
+		//上传资质图片 旧接口
 		//picUpload();
-		picUploadNew();
+		
+		//上传资质图片 新接口
+		// picUploadNew();
 		
 		
 		
@@ -48,6 +52,8 @@ public class YanshouTest {
 		//createDish();
 		//updateDish();
 		//deleteDish();
+		
+		//查看菜单
 		//showDish();
 		
 		

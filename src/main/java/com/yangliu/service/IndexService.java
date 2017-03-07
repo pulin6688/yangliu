@@ -1,5 +1,8 @@
 package com.yangliu.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -15,6 +18,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.yangliu.dao.IndexDao;
+import com.yangliu.jms.producer.TestProducer;
 import com.yangliu.utils.MD5Utils;
 
 @Service
@@ -26,6 +30,8 @@ public class IndexService {
 	
 	@Autowired
 	private IndexDao indexDao;
+	@Autowired
+	private TestProducer testProducer;
 	
 	public List<Map<String,Object>> findByCache(Integer no,Integer size){
 		long s = System.currentTimeMillis();
@@ -83,8 +89,33 @@ public class IndexService {
 			long e = System.currentTimeMillis();
 			logger.info("{}",(e-s));
 			//System.out.println(e-s);
+			
 		}
 		return null;
+	}
+	
+	private DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	/**
+	 * 发送消息
+	 * @param size
+	 */
+	public String message(Integer size){
+		if(size != null && size > 0){
+			new Thread(new Runnable(){
+				public void run() {
+					for(int i=0; i< size;i++){
+						testProducer.sendMessage(null);
+						testProducer.sendMessageDelay(null);
+					}
+				}}).start();
+			
+		}else{
+			testProducer.sendMessage(null);
+			testProducer.sendMessageDelay(null);
+		}
+		
+		return sdf.format(new Date());
+	
 	}
 	
 	public void get(String key) throws ExecutionException {
