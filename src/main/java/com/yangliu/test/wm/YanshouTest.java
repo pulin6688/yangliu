@@ -33,8 +33,11 @@ public class YanshouTest {
 	public static void main(String[] args) throws Exception {
 		//createShop();
 		//updateShop();
+		
 		//openShop();
+		
 		//offlineShop();
+		
 		//closeShop();
 		
 		//上传资质图片 旧接口
@@ -50,6 +53,7 @@ public class YanshouTest {
 		
 		
 		//createDish();
+		
 		//updateDish();
 		//deleteDish();
 		
@@ -58,8 +62,11 @@ public class YanshouTest {
 		
 		
 		//orderConfirm();
+		
 		//orderComplete();
+		
 		//orderCancel();
+		
 		//orderStatusPush();
 	}
 	
