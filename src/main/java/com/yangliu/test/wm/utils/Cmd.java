@@ -93,8 +93,15 @@ public class Cmd implements Serializable {
     
     
     //西安小米串串API测试店
-    private static final String account="64968";
-    private static final String secret="e008b3bb71f58119";
+//    private static final String account="64968";
+//    private static final String secret="e008b3bb71f58119";
+    
+    
+    
+    
+    //京味斋API测试店
+    private static final String account="64965";
+    private static final String secret="d3641394f25e4af0";
    
     
    
