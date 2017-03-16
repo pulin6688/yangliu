@@ -2,6 +2,7 @@ package com.yangliu.test.wm.service;
 
 import java.util.TreeMap;
 
+import com.yangliu.test.wm.BaiduAccount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -49,7 +50,7 @@ public class BaiduWaimaiShopService {
 	 * 商户操作
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	private void shop(CreateShopTO to,String cmd) {
 		logger.info("cmd:{}",cmd);
@@ -57,7 +58,7 @@ public class BaiduWaimaiShopService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.buildShopMap(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -68,7 +69,7 @@ public class BaiduWaimaiShopService {
 	 * 商户开业
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	public void openShop(ModifyShopStatusTO to){
 		 commonStatusModify(to,SHOP_OPEN);
@@ -95,7 +96,7 @@ public class BaiduWaimaiShopService {
 	 * 商户资质图片上传
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	public void shopPicUpload(ShopPicUploadTO to){
 		String cmd = SHOP_PIC_UPLOAD;
@@ -104,7 +105,7 @@ public class BaiduWaimaiShopService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		}catch(Exception e){
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -118,7 +119,7 @@ public class BaiduWaimaiShopService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		}catch(Exception e){
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -136,7 +137,7 @@ public class BaiduWaimaiShopService {
 			reqMap.put("shop_id", shopId);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		}catch(Exception e){
 			logger.error("百度外卖商户操作cmd:"+cmd+"失败,error:", e);
 		}

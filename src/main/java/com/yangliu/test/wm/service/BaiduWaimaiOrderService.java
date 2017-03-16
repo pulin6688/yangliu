@@ -2,6 +2,8 @@ package com.yangliu.test.wm.service;
 
 import java.util.TreeMap;
 
+import com.yangliu.test.wm.BaiduAccount;
+import com.yangliu.test.wm3.CmdV3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +11,6 @@ import com.yangliu.test.wm.to.order.OrderCancelByYanshouTO;
 import com.yangliu.test.wm.to.order.OrderCompleteByYanshouTO;
 import com.yangliu.test.wm.to.order.OrderStatusPushByYanshouTO;
 import com.yangliu.test.wm.utils.Cmd;
-import com.yangliu.test.wm.utils.CmdV3;
 import com.yangliu.utils.HttpUtils;
 
 
@@ -37,7 +38,7 @@ public class BaiduWaimaiOrderService {
 			reqMap.put("order_id", to.getOrder_id());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
@@ -53,7 +54,7 @@ public class BaiduWaimaiOrderService {
 			TreeMap<String, Object> reqMap = new TreeMap<String, Object>();
 			reqMap.put("order_id", to.getOrder_id());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -70,7 +71,7 @@ public class BaiduWaimaiOrderService {
 			reqMap.put("reason", to.getReason());
 			reqMap.put("type", to.getType());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -84,7 +85,7 @@ public class BaiduWaimaiOrderService {
 			TreeMap<String, Object> reqMap = new TreeMap<String, Object>();
 			reqMap.put("order_id", to.getOrder_id());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -98,7 +99,7 @@ public class BaiduWaimaiOrderService {
 			TreeMap<String, Object> reqMap = new TreeMap<String, Object>();
 			reqMap.put("order_id", to.getOrder_id());
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("百度外卖验收测试商户失败，error:", e);
 		}
@@ -109,7 +110,7 @@ public class BaiduWaimaiOrderService {
 		body.put("order_id", "14785798481663");
 		body = CmdV3.getRequestSubmit("order.get",body);
 		try {
-			HttpUtils.httppost(Cmd.URL, body);
+			HttpUtils.httppost(BaiduAccount.URL, body);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

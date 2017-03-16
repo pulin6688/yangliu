@@ -2,6 +2,7 @@ package com.yangliu.test.wm.service;
 
 import java.util.TreeMap;
 
+import com.yangliu.test.wm.BaiduAccount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -61,7 +62,7 @@ public class BaiduWaimaiShopDishService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("商户菜品操作失败，error:", e);
 		}
@@ -76,7 +77,7 @@ public class BaiduWaimaiShopDishService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(DISH_SHOW, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("商户菜品操作失败，error:", e);
 		}
@@ -89,7 +90,7 @@ public class BaiduWaimaiShopDishService {
 	 * 菜品创建
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	public void dishCreateOrUpdate(CreateDishTO to,String cmd){
 		logger.info("cmd:{}",cmd);
@@ -98,7 +99,7 @@ public class BaiduWaimaiShopDishService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("商户菜品操作失败，error:", e);
 		}
@@ -112,7 +113,7 @@ public class BaiduWaimaiShopDishService {
 	 * 菜品分类创建
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	public void dishCategoryCreate(CreateDishCategoryTO to){
 		 dishCategory(to,DISH_CATEGORY_CREATE);
@@ -122,7 +123,7 @@ public class BaiduWaimaiShopDishService {
 	 * 菜品分类修改
 	 * @param to
 	 * @return
-	 * @throws ServiceException
+	 * @throws
 	 */
 	public void dishCategoryUpdate(CreateDishCategoryTO to){
 		 dishCategory(to,DISH_CATEGORY_UPDATE);
@@ -137,7 +138,7 @@ public class BaiduWaimaiShopDishService {
 			TreeMap<String, Object> reqMap = BuildDataUtils.build(to);
 			String jsonRequestBody = Cmd.getRequestSubmit(cmd, reqMap);
 			logger.info("jsonRequestBody:{}",jsonRequestBody);
-			HttpUtils.httppostJson(Cmd.URL, jsonRequestBody);
+			HttpUtils.httppostJson(BaiduAccount.URL, jsonRequestBody);
 		} catch (Exception e) {
 			logger.error("商户菜品分类操作失败，error:", e);
 		}
