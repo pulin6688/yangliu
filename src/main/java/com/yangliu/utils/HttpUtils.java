@@ -231,7 +231,7 @@ public class HttpUtils {
 					nn = nn.substring(0, nn.lastIndexOf("&"));
 				}
 				
-				//System.out.println("url:     "+nn);
+				System.out.println("url:     "+nn);
 				
 				//logger.info("httppostdata:"+sb.toString());
 				HttpEntity entity = new UrlEncodedFormEntity(pairs, "UTF-8");
@@ -239,7 +239,9 @@ public class HttpUtils {
 				httppost.setEntity(entity);
 			}
 			response = httpClient.execute(httppost);
+			System.out.println("response:"+response);
 			int statusCode = response.getStatusLine().getStatusCode();//http解析状态码 200表示成功，其他表示失败
+			System.out.println("statusCode:"+statusCode);
 			if(statusCode == 200){
 				HttpEntity responseEntity = response.getEntity();
 				String responseStr = EntityUtils.toString(responseEntity, "UTF-8");
