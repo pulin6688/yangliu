@@ -36,6 +36,7 @@ public class YanshouTest {
 		
 		//openShop();
 		
+		//下线商户
 		//offlineShop();
 		
 		//closeShop();
@@ -63,11 +64,12 @@ public class YanshouTest {
 		
 		//orderConfirm();
 		
-		//orderComplete();
-		
 		//orderCancel();
 		
 		//orderStatusPush();
+		
+		
+		//orderComplete();
 	}
 	
 	

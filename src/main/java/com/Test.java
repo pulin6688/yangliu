@@ -1,10 +1,17 @@
 package com;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+
+import org.apache.commons.io.FileUtils;
+
+import com.google.common.io.Resources;
 
 public class Test {
 	
@@ -19,6 +26,23 @@ public class Test {
 	 }
 	
 	public static void main(String[] args) throws Exception{
+		
+		 
+	      InputStream is = Test.class.getClass().getResourceAsStream("/testclient.truststore");
+	        try {
+	        	  byte[] byt = new byte[8096];
+	        	  int index=0;
+	               while(is.read(byt,0,1)>=1){
+	            	   index++;
+	               }
+	               
+	               System.out.println("index:"+index);
+	        	
+	           // FileUtils.copyInputStreamToFile(is,new File(Resources.getResource("/").getPath()));
+	            FileUtils.copyInputStreamToFile(is,new File("D:/testclient.truststore"));
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
 		
 		System.out.println( (int) (char)(byte)-1);
 		
