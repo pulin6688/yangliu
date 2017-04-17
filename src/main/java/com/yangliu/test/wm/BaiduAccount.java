@@ -13,8 +13,8 @@ public class BaiduAccount {
 //    public static final String secret="85bff21a43cb8da6";
     
     //247900002自配送
-    public static final String account="65390";
-    public static final String secret="6f48db35eef9c822";
+   // public static final String account="65390";
+    //public static final String secret="6f48db35eef9c822";
 
 //    public static final String account="65390";
 //    public static final String secret="6f48db35eef9c822";
@@ -97,5 +97,20 @@ public class BaiduAccount {
 //    public static final String account="64946";
 //    public static final String secret="a4c2ffc091e9f5d4";
     //64946
+   
+    
+    
+    //广州AliChicken测试
+//  public static final String account="64910";
+//  public static final String secret="d69e2a1d1ac0aec1";
+    
+  
+  
+  //温州城API测试店
+public static final String account="64911";
+public static final String secret="1a5be6558dbe8fef";
+  
+ 
+    
     
 }

@@ -16,22 +16,7 @@ public class HttpUtilsTest {
 	
 	public static void main(String[] args)  throws Exception{
 
-//		String clientId = "testid";
-//		String clientSecret = "testSer";
-//		String scope = "testscope";
-//		String username = "15912345678";
-//		String password = "1qaz2wsx";
-//		String url = "https://openapi-p.4008827123.cn/oauth/token";
-//		Map<String, Object> param = Maps.newHashMap();
-//		param.put("client_id", clientId);
-//		param.put("client_secret", clientSecret);
-//		param.put("grant_type", "password");
-//		param.put("scope", scope);
-//		param.put("username", username);
-//		param.put("password", password);
-//		String s = HttpUtils.httppost(url, param);
-//		System.out.println(s);
-//		
+
 		
 		
 		
@@ -58,25 +43,56 @@ public class HttpUtilsTest {
 //			userName=25011111111
 //			password=abc123
 		
+		
+		
+//		Map<String, Object>  param = Maps.newHashMap();
+//		param.put("client_id", "keruyun");
+//		param.put("client_secret", "f845a0e4d8df480c9a809c46f43ddb3e");
+//		param.put("response_type", "code");
+//		param.put("scope", "common_scope");
+//		param.put("thirdparty_merchant_no", "2479");//商家编号 品牌编号
+//		param.put("thirdparty_merchant_name", "南粉北面高攀路店面");//商家名称 品牌名称
+//		param.put("thirdparty_store_no", "247900001");//门店编号
+//		param.put("thirdparty_store_name", "南粉北面南粉北面高攀路店面");//门店名称
+//	
+//		String s = HttpUtils.httppost("https://openapi-p.4008827123.cn/oauth/authorize", param);
+//		System.out.println(s);
+//		
+		
+		
 		Map<String, Object>  param = Maps.newHashMap();
-		param.put("client_id", "keruyun");
-		param.put("client_secret", "f845a0e4d8df480c9a809c46f43ddb3e");
+		param.put("id", "247900001");
+		param.put("expired", "7000");
+		param.put("token", "e881085309fa4b77873408b4c9194328");
+		String url="http://devpartner.shishike.com/api/crm/test/token/redis";
+		String s = HttpUtils.httppost(url, param);
 		
-		param.put("response_type", "code");
-		//param.put("grant_type", "code");
-		
-		param.put("scope", "common_scope");
-		
-		param.put("thirdparty_merchant_no", "S1111111111");
-		param.put("thirdparty_merchant_name", "A1111111111");
-		
-		param.put("thirdparty_store_no", "S1111111111");
-		param.put("thirdparty_store_name", "A1111111111");
-		
-	
-		
-		String s = HttpUtils.httppost("https://openapi-p.4008827123.cn/oauth/authorize", param);
 		System.out.println(s);
+		
+		//refresh();
+	
+	
+	}
+	
+	
+	public static void refresh() throws Exception{
+		
+		String clientId = "keruyun";
+		String clientSecret = "f845a0e4d8df480c9a809c46f43ddb3e";
+		String grant_type   =     "refresh_token";
+		String refresh_token   =     "e856a8d7a12e44109ef5454b53941b32";
+		   
+		Map<String, Object> param = Maps.newHashMap();
+		param.put("client_id", clientId);
+		param.put("client_secret", clientSecret);
+		param.put("grant_type", grant_type);
+		param.put("refresh_token", refresh_token);
+		
+		String url = "https://openapi-p.4008827123.cn/oauth/token";
+		String s = HttpUtils.httppost(url, param);
+		
+		System.out.println(s);
+//		
 	}
 	
 	

@@ -34,11 +34,13 @@ public class YanshouTest {
 		//createShop();
 		//updateShop();
 		
+		//商户开业
 		//openShop();
 		
 		//下线商户
 		//offlineShop();
 		
+		//商户歇业
 		//closeShop();
 		
 		//上传资质图片 旧接口
