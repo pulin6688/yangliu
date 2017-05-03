@@ -178,6 +178,95 @@ public class HttpUtils {
 	
 	
 	
+	public static String httppost2(String url,Map<String, String> data) throws Exception {
+		CloseableHttpResponse response = null;
+		try{
+			if (StringUtils.isBlank(url)) {
+				throw new IllegalArgumentException("请求参数有误,url不能为空");
+			}
+			CloseableHttpClient httpClient = getCloseableHttpClient();
+			HttpPost httppost = new HttpPost(url);
+			RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(10000).build();//设置请求和传输超时时间
+			httppost.setConfig(requestConfig);
+			if(data != null){
+				List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+				Iterator<String> keys = data.keySet().iterator();
+				StringBuilder sb = new StringBuilder();
+				while(keys.hasNext()){
+					String key = keys.next();
+					Object value = data.get(key);
+					//logger.info(key+":"+value);
+					
+					if("".equals(value.toString())){
+						sb.append(key).append("=");
+					}else{
+						sb.append(key).append("=").append(value);
+					}
+					sb.append("&");
+					
+					
+					
+					if(value instanceof String){
+						//System.out.println(key+"="+value);
+						
+						NameValuePair param;
+						if("".equals(value.toString())){
+							 param = new BasicNameValuePair(key, "");
+						}else{
+							 param = new BasicNameValuePair(key, value.toString());
+						}
+						
+						pairs.add(param);
+					}else{
+						//System.out.println(key+"="+JSON.toJSONString(value));
+						NameValuePair param = new BasicNameValuePair(key, JSON.toJSONString(value));
+						pairs.add(param);
+					}
+					
+					
+				}
+				
+				String nn = url+"?"+sb.toString();
+				if(nn.endsWith("&")){
+					nn = nn.substring(0, nn.lastIndexOf("&"));
+				}
+				
+				System.out.println("url:     "+nn);
+				
+				//logger.info("httppostdata:"+sb.toString());
+				HttpEntity entity = new UrlEncodedFormEntity(pairs, "UTF-8");
+				//EntityUtils.toString(entity)
+				httppost.setEntity(entity);
+			}
+			response = httpClient.execute(httppost);
+			//System.out.println("response:"+response);
+			int statusCode = response.getStatusLine().getStatusCode();//http解析状态码 200表示成功，其他表示失败
+			//System.out.println("statusCode:"+statusCode);
+			if(statusCode == 200){
+				HttpEntity responseEntity = response.getEntity();
+				String responseStr = EntityUtils.toString(responseEntity, "UTF-8");
+				//System.out.println("responseStr:"+responseStr);
+				return responseStr;	
+			}
+			return null;	
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			if(response != null){
+			   try {  
+                    response.close();  
+                } catch (IOException e) {
+                	logger.error("e:",e);
+                }  
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	
+
 	public static String httppost(String url,Map<String, Object> data) throws Exception {
 		CloseableHttpResponse response = null;
 		try{
@@ -262,6 +351,7 @@ public class HttpUtils {
 		}
 		return null;
 	}
+	
 	
 	
 	public static String httpget(String url) throws Exception {

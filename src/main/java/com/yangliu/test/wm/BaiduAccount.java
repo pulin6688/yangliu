@@ -100,15 +100,23 @@ public class BaiduAccount {
    
     
     
-    //广州AliChicken测试
+//广州AliChicken测试
 //  public static final String account="64910";
 //  public static final String secret="d69e2a1d1ac0aec1";
     
   
   
   //温州城API测试店
-public static final String account="64911";
-public static final String secret="1a5be6558dbe8fef";
+//public static final String account="64911";
+//public static final String secret="1a5be6558dbe8fef";
+
+
+//一品小笼API测试店
+public static final String account="64902";
+public static final String secret="98488c7082f4a3fb";
+
+
+
   
  
     

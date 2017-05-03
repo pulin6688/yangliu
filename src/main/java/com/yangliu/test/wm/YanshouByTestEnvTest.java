@@ -34,7 +34,7 @@ public class YanshouByTestEnvTest {
 		
 		//orderConfirm();
 		//orderComplete();
-		orderCancel();
+		//orderCancel();
 		//orderStatusPush();
 	}
 	

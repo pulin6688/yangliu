@@ -1,4 +1,4 @@
-package com.yangliu;
+package com.yangliu.poipush;
 
 import java.text.SimpleDateFormat;
 import java.util.Map;
@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import com.yangliu.utils.HttpUtils;
 
-public class HttpUtilsTest {
+public class Test {
 	
 	public static SimpleDateFormat format =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:ms"); 
 	
