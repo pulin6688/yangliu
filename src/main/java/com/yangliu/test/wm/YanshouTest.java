@@ -28,10 +28,10 @@ public class YanshouTest {
 	private static BaiduWaimaiOrderService baiduWaimaiOrderService = new BaiduWaimaiOrderService();
 	
 	
-	public static String base = "/Users/pulin/baiduwaimai";
+	public static String base = "/Users/mac/baiduwaimai";
 	
 	public static void main(String[] args) throws Exception {
-		//createShop();
+		createShop();
 		//updateShop();
 		
 		//商户开业
