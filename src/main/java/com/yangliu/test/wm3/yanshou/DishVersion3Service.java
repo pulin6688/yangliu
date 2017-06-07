@@ -1,7 +1,11 @@
-package com.yangliu.test.wm3;
+package com.yangliu.test.wm3.yanshou;
 
 import java.util.TreeMap;
 
+import com.yangliu.test.wm3.CmdV3;
+import com.yangliu.test.wm3.DishMenuGetTO;
+import com.yangliu.test.wm3.OrderCancelTO;
+import com.yangliu.test.wm3.OrderStatusGetTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +26,8 @@ public class DishVersion3Service {
 	private static final String DISH_MENU_GET   = "dish.menu.get";  //查看菜单
 	private static final String ORDER_STATUS_GET   = "order.status.get";  //订单状态查看
 	private static final String ORDER_CANCEL   = "order.cancel";  //订单状态查看
+
+
 	private static Logger logger =  LoggerFactory.getLogger(DishVersion3Service.class);
 
 
@@ -32,16 +38,6 @@ public class DishVersion3Service {
 		to.setShop_id("247900002");
 		//service.dishMenuGet(to);
 		//service.dishGet(to);
-		
-		OrderStatusGetTO t = new OrderStatusGetTO();
-		t.setOrder_id("14906933274710");
-		//service.orderStatusGet(t);
-		
-		OrderCancelTO cancel = new  OrderCancelTO();
-		cancel.setOrder_id("14906933274710");
-		cancel.setType(-1);
-		cancel.setReason("cancel取消");
-		service.orderCancel(cancel);
 	}
 
 
@@ -79,29 +75,14 @@ public class DishVersion3Service {
 		}
 	}
 	
-	public void orderStatusGet(OrderStatusGetTO to){
-		logger.info("cmd:{}",ORDER_STATUS_GET);
-		try {
-			TreeMap<String, Object> body = BuildDataUtils.build(to);
-			TreeMap<String, Object>  jsonRequestBody = CmdV3.getRequestSubmit(ORDER_STATUS_GET, body);
-			logger.info("jsonRequestBody:{}",JSON.toJSONString(jsonRequestBody));
-			HttpUtils.httppost(BaiduAccount.URL, jsonRequestBody);
-		} catch (Exception e) {
-			logger.error("商户菜品操作失败，error:", e);
-		}
-	}
+
+
+
+
 	
-	public void orderCancel(OrderCancelTO to){
-		logger.info("cmd:{}",ORDER_CANCEL);
-		try {
-			TreeMap<String, Object> body = BuildDataUtils.build(to);
-			TreeMap<String, Object>  jsonRequestBody = CmdV3.getRequestSubmit(ORDER_CANCEL, body);
-			logger.info("jsonRequestBody:{}",JSON.toJSONString(jsonRequestBody));
-			HttpUtils.httppost(BaiduAccount.URL, jsonRequestBody);
-		} catch (Exception e) {
-			logger.error("商户菜品操作失败，error:", e);
-		}
-	}
+
+
+
 
 
 

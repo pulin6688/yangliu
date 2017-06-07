@@ -334,7 +334,7 @@ public class HttpUtils {
 			if(statusCode == 200){
 				HttpEntity responseEntity = response.getEntity();
 				String responseStr = EntityUtils.toString(responseEntity, "UTF-8");
-				//System.out.println("responseStr:"+responseStr);
+				System.out.println("responseStr:"+responseStr);
 				return responseStr;	
 			}
 			return null;	

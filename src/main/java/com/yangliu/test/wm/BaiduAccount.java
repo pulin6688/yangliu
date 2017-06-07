@@ -5,6 +5,8 @@ package com.yangliu.test.wm;
  */
 
 public class BaiduAccount {
+	
+	// select * from partner_third_match p where p.shop_identy=247900001 and p.source=4 and status=1;
 
 
     public static final String URL = "http://api.waimai.baidu.com";
@@ -111,9 +113,48 @@ public class BaiduAccount {
 //public static final String secret="1a5be6558dbe8fef";
 
 
-//一品小笼API测试店
-public static final String account="64902";
-public static final String secret="98488c7082f4a3fb";
+  //一品小笼API测试店
+/*    public static final String account="64902";
+    public static final String secret="98488c7082f4a3fb";*/
+    
+    
+  //西部马华API测试店
+//    public static final String account="64882";
+//    public static final String secret="d45dfb9703be49e9";
+    
+    
+   //六合顺API测试店 
+//    public static final String account="64864";
+//    public static final String secret="473681093d07514a";
+ 
+   // 广州良品黑糖API
+   // public static final String account="64851";
+   // public static final String secret="be49139e322a1f52";
+    
+    
+    //麦当劳（青岛）API测试
+//    public static final String account="64850";
+//    public static final String secret="1f9b1d809bdda16b";
+
+
+
+    //米食先生自配送API测试店
+
+//    public static final String account="64835";
+//    public static final String secret="32cdd943db876ee5";
+
+
+//客如云_单商户测试项目API测试门店
+   // public static final String account="64823";
+   // public static final String secret="aa94b71fd3a08013";
+
+    //吖茶API测试店
+    public static final String account="64814";
+    public static final String secret="77efd49e92003c17";
+
+
+    
+    
 
 
 
