@@ -31,11 +31,11 @@ public class YanshouTest {
 	public static String base = "/Users/mac/baiduwaimai";
 	
 	public static void main(String[] args) throws Exception {
-		createShop();
+		//createShop();
 		//updateShop();
 		
 		//商户开业
-		//openShop();
+		openShop();
 		
 		//下线商户
 		//offlineShop();
