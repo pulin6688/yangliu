@@ -153,8 +153,13 @@ public class BaiduAccount {
     //public static final String secret="77efd49e92003c17";
 
     //天御皇茶API测试店
-    public static final String account="64807";
-    public static final String secret="834f2efe02e62215";
+//    public static final String account="64807";
+//    public static final String secret="834f2efe02e62215";
+
+
+    //汇吃汇喝API测试店
+    public static final String account="64802";
+    public static final String secret="65fda7c46a05b878";
 
     
     
