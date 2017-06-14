@@ -1,4 +1,4 @@
-package com.yangliu.test.wm3;
+package com.yangliu.test.wm3.entity;
 
 import java.io.Serializable;
 

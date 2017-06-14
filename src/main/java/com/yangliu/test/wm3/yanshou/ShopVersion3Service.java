@@ -4,7 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.yangliu.test.wm.BaiduAccount;
 import com.yangliu.test.wm.utils.BuildDataUtils;
 import com.yangliu.test.wm3.CmdV3;
-import com.yangliu.test.wm3.ShopClose;
+import com.yangliu.test.wm3.entity.ShopClose;
+import com.yangliu.test.wm3.entity.ShopCreate;
 import com.yangliu.utils.HttpUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,16 @@ public class ShopVersion3Service {
 		//service.shopClose(shopClose);
 		//service.shopOffline(shopClose);
 		service.shopOpen(shopClose);
+	}
+
+
+	public void shopCreate(ShopCreate to){
+		logger.info("cmd:{}",SHOP_CREATE);
+		try{
+
+		}catch(Exception e){
+
+		}
 	}
 
 

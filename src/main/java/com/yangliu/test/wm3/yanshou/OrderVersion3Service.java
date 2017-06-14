@@ -32,14 +32,14 @@ public class OrderVersion3Service {
 
 
 		OrderVersion3 t = new OrderVersion3();
-		t.setOrder_id("14962244205938");
+		t.setOrder_id("14974299916838");
 		//service.orderStatusGet(t);
 		//service.orderConfirm(t);
 
 
 
 		OrderCancelTO cancel = new  OrderCancelTO();
-		cancel.setOrder_id("14962244205938");
+		cancel.setOrder_id("14974299916838");
 		cancel.setType(-1);
 		cancel.setReason("cancel");
 		service.orderCancel(cancel);
