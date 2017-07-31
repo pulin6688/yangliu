@@ -31,33 +31,28 @@ public class YanshouTest {
 	public static String base = "/Users/mac/baiduwaimai";
 	
 	public static void main(String[] args) throws Exception {
-		//createShop();
+
+
 		//updateShop();
 		
-		//商户开业
-		//openShop();
-		
-		//下线商户
-		//offlineShop();
-		
-		//商户歇业
-		//closeShop();
-		
-		//上传资质图片 旧接口
-		//picUpload();
-		
-		//上传资质图片 新接口
-		// picUploadNew();
+
+
+		//createShop();//创建商户
+		//offlineShop();//下线商户
+		//closeShop();//商户歇业
+		openAndCreateDish();//商户开业
+
+
+
+
+		//picUpload();//上传资质图片 旧接口
 		
 		
-		
-		//createDishCategory();
-		
-		
+		//
 		//updateDishCategory();
 		
 		
-		//createDish();
+		//
 		
 		//updateDish();
 		//deleteDish();
@@ -74,6 +69,13 @@ public class YanshouTest {
 		
 		
 		//orderComplete();
+	}
+
+	public static void openAndCreateDish()throws Exception{
+		openShop();//商户开业
+		picUploadNew();//上传资质图片 新接口
+		createDishCategory();
+		createDish();
 	}
 	
 	

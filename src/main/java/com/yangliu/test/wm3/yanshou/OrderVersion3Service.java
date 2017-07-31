@@ -30,19 +30,25 @@ public class OrderVersion3Service {
 	public static void main(String[] args){
 		OrderVersion3Service service = new OrderVersion3Service();
 
+		String order_id="15014969337397";
 
 		OrderVersion3 t = new OrderVersion3();
-		t.setOrder_id("14974299916838");
+		t.setOrder_id(order_id);
 		//service.orderStatusGet(t);
-		//service.orderConfirm(t);
+		service.orderConfirm(t);//确认订单
 
 
+		try {
+			Thread.sleep(1000*15);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		OrderCancelTO cancel = new  OrderCancelTO();
-		cancel.setOrder_id("14974299916838");
+		cancel.setOrder_id(order_id);
 		cancel.setType(-1);
 		cancel.setReason("cancel");
-		service.orderCancel(cancel);
+		service.orderCancel(cancel);//取消订单
 
 
 

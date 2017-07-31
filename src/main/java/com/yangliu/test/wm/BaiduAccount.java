@@ -139,12 +139,11 @@ public class BaiduAccount {
 
 
     //米食先生自配送API测试店
-
 //    public static final String account="64835";
 //    public static final String secret="32cdd943db876ee5";
 
 
-//客如云_单商户测试项目API测试门店
+   //客如云_单商户测试项目API测试门店
    // public static final String account="64823";
    // public static final String secret="aa94b71fd3a08013";
 
@@ -158,10 +157,121 @@ public class BaiduAccount {
 
 
     //汇吃汇喝API测试店
-    public static final String account="64802";
-    public static final String secret="65fda7c46a05b878";
+//    public static final String account="64802";
+//    public static final String secret="65fda7c46a05b878";
 
-    
+
+
+
+
+    //2017-07-31 验收
+//    //卤西西API测试店
+//    public static final String account="64579";
+//    public static final String secret="1bb00ac2296e78dd";
+//
+//
+
+
+    //佛山八合里海记牛肉API测试店
+//    public static final String account="64538";
+//    public static final String secret="eca373541b866917";
+
+
+   // 酷公社API测试店
+//   public static final  String account="64539";
+//    public static final String secret="b560e09f7e886300";
+
+
+    //任性排骨测试账号
+    //public static final  String account="64528";
+    //public static final String secret="2cf009b144ca75bc";
+
+
+    // 么么咖啡API测试店
+//    public static final  String account="64540";
+//    public static final String secret="edc330d2b4ab8ed5";
+
+
+    //薯小帅API测试店
+//    public static final  String account="64542";
+//    public static final String secret="aa7f153ada98e6dc";
+
+
+
+    //贝莉美莓API测试店
+//    public static final  String account="64543";
+//    public static final String secret="58e373f9284de1f3";
+
+
+    //林羽堂API测试店
+//    public static final  String account="64545";
+//    public static final String secret="3072556212cdc71b";
+
+    //少爷们的店API测试店
+//    public static final  String account="64546";
+//    public static final String secret="e7af3f204cd6c00a";
+
+
+    //合乐屋API测试店
+//    public static final  String account="64547";
+//    public static final String secret="a22796cd9d1cb838";
+
+
+//    //bzo!API测试店
+//    public static final  String account="64548";
+//    public static final String secret="c1c60c8349c5683a";
+
+//    //香滋稻API测试店
+//    public static final  String account="64549";
+//    public static final String secret="2fe9b9d5d464e891";
+
+
+    //鳗步API测试店
+//    public static final  String account="64551";
+//    public static final String secret="ec7b4bd6a1b8471e";
+
+    //广隆蛋挞王API测试店
+//    public static final  String account="64552";
+//    public static final String secret="03ece420a637208a";
+
+    //
+    //伊佐茶序API测试店
+//    public static final  String account="64553";
+//    public static final String secret="ca89e0526fb4ee2b";
+
+//    //绚味API测试店
+//    public static final  String account="64554";
+//    public static final String secret="df38d4f7cb2a7e38";
+
+
+//    //喵七公API测试店
+//    public static final  String account="64555";
+//    public static final String secret="ffeb82e5696262b5";
+
+
+//    //湘人龙记老长沙米粉API测试店
+//    public static final  String account="64556";
+//    public static final String secret="b2d8f023713cda31";
+
+
+//    //健身御厨API测试店
+//    public static final  String account="64557";
+//    public static final String secret="eb035d482deb872a";
+//
+//    //阿里山贡茶API测试店
+//    public static final  String account="64558";
+//    public static final String secret="9d5d2a52562456ba";
+
+
+
+    //李连贵熏肉大饼API测试店
+//    public static final  String account="64559";
+//    public static final String secret="68a8f0e2875414e6";
+
+    //舔杯API测试店
+    public static final  String account="64560";
+    public static final String secret="d15ad70236b85f7f";
+
     
 
 
