@@ -15,7 +15,7 @@ import com.yangliu.test.wm.utils.BuildDataUtils;
 import com.yangliu.utils.HttpUtils;
 
 /**
- * 百度外卖门店菜品操作 version3
+ * 百度外卖门店菜品操作 version3   菜单查看
  * @author pul
  *
  */
@@ -34,9 +34,9 @@ public class DishVersion3Service {
 	public static void main(String[] args){
 		DishVersion3Service service = new DishVersion3Service();
 		DishMenuGetTO to = new DishMenuGetTO();
-		to.setBaidu_dish_id("1496476931");
-		to.setShop_id("247900002");
-		//service.dishMenuGet(to);
+		//to.setBaidu_dish_id("1496476931");
+		to.setShop_id("247900001");
+		service.dishMenuGet(to);
 		//service.dishGet(to);
 	}
 

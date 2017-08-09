@@ -268,16 +268,54 @@ public class BaiduAccount {
 //    public static final  String account="64559";
 //    public static final String secret="68a8f0e2875414e6";
 
-    //舔杯API测试店
-    public static final  String account="64560";
-    public static final String secret="d15ad70236b85f7f";
-
-    
+//    //舔杯API测试店
+//    public static final  String account="64560";
+//    public static final String secret="d15ad70236b85f7f";
 
 
 
-  
- 
-    
-    
+//    //久食玖API测试店
+//    public static final  String account="64573";
+//    public static final String secret="e5785cc5c56a4611";
+
+
+    //二十五块半API测试店 15018198304779
+//    public static final  String account="64514";
+//    public static final String secret="3318c03f00f5bddf";
+
+//    //裕记API测试店
+//    public static final  String account="64489";
+//    public static final  String secret="7253960e8697aeb7";
+
+//
+//    //娄三少春饼API测试店 15020698276461
+//    public static final  String account="64490";
+//    public static final  String secret="aeacbbb4a4d253fb";
+
+    //牛魔小鲜API测试店   15020704182006
+//    public static final  String account="64523";
+//    public static final  String secret="386d4ae822ca67b6";
+
+    //锦味屋日式烧肉API测试店 15020712735206
+//    public static final  String account="64525";
+//    public static final  String secret="eb1e2714ddc14372";
+
+//
+//    //盛百味API测试账号 15020716261996
+//    public static final  String account="64526";
+//    public static final  String secret="50adb5555a02fc05";
+
+//
+
+
+    //生煎君API测试店
+    public static final  String account="64453";
+    public static final  String secret="c41d69962096744c";
+
+
+
+
+
+
+
 }
