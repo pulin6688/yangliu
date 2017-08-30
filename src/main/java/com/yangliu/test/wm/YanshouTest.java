@@ -31,20 +31,18 @@ public class YanshouTest {
 	public static String base = "/Users/mac/baiduwaimai";
 	
 	public static void main(String[] args) throws Exception {
-
-
 		//updateShop();
 		
 
 
 		//createShop();//创建商户
 		//offlineShop();//下线商户
-		//closeShop();//商户歇业
+	    //closeShop();//商户歇业
 
-		//create5Dish();//创建菜品 至少创建5个菜品店铺才能开业
 
+
+		//create_5_Dish();//创建菜品 至少创建5个菜品店铺才能开业
 		//openShop();//商户开业
-
 
 
 
@@ -59,7 +57,7 @@ public class YanshouTest {
 		//deleteDish();
 		
 		//查看菜单
-		showDish();
+		//showDish();
 		
 		
 		//orderConfirm();
@@ -72,11 +70,15 @@ public class YanshouTest {
 		//orderComplete();
 	}
 
-	public static void create5Dish()throws Exception{
-
+	public static void create_1_Dish()throws Exception{
 		picUploadNew();//上传资质图片 新接口
 		createDishCategory();
 		createDish();
+	}
+	public static void create_5_Dish()throws Exception{
+		picUploadNew();//上传资质图片 新接口
+		createDishCategory();
+		createDish5();
 	}
 	
 	
@@ -147,21 +149,27 @@ public class YanshouTest {
 		String json = FileUtils.readFileToString(new File(base+"/dish.txt"), "gbk");
 		CreateDishTO to = JSON.parseObject(json, CreateDishTO.class);
 		baiduWaimaiShopDishService.dishCreate(to);
+	}
 
-		 json = FileUtils.readFileToString(new File(base+"/dish2.txt"), "gbk");
-		 to = JSON.parseObject(json, CreateDishTO.class);
+	public static void createDish5() throws Exception {
+		String json = FileUtils.readFileToString(new File(base+"/dish.txt"), "gbk");
+		CreateDishTO to = JSON.parseObject(json, CreateDishTO.class);
 		baiduWaimaiShopDishService.dishCreate(to);
 
-		 json = FileUtils.readFileToString(new File(base+"/dish3.txt"), "gbk");
-		 to = JSON.parseObject(json, CreateDishTO.class);
+		json = FileUtils.readFileToString(new File(base+"/dish2.txt"), "gbk");
+		to = JSON.parseObject(json, CreateDishTO.class);
 		baiduWaimaiShopDishService.dishCreate(to);
 
-		 json = FileUtils.readFileToString(new File(base+"/dish4.txt"), "gbk");
-		 to = JSON.parseObject(json, CreateDishTO.class);
+		json = FileUtils.readFileToString(new File(base+"/dish3.txt"), "gbk");
+		to = JSON.parseObject(json, CreateDishTO.class);
 		baiduWaimaiShopDishService.dishCreate(to);
 
-		 json = FileUtils.readFileToString(new File(base+"/dish5.txt"), "gbk");
-		 to = JSON.parseObject(json, CreateDishTO.class);
+		json = FileUtils.readFileToString(new File(base+"/dish4.txt"), "gbk");
+		to = JSON.parseObject(json, CreateDishTO.class);
+		baiduWaimaiShopDishService.dishCreate(to);
+
+		json = FileUtils.readFileToString(new File(base+"/dish5.txt"), "gbk");
+		to = JSON.parseObject(json, CreateDishTO.class);
 		baiduWaimaiShopDishService.dishCreate(to);
 	}
 	public static void updateDish() throws Exception {

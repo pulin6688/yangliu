@@ -35,7 +35,8 @@ public class DishVersion3Service {
 		DishVersion3Service service = new DishVersion3Service();
 		DishMenuGetTO to = new DishMenuGetTO();
 		//to.setBaidu_dish_id("1496476931");
-		to.setShop_id("247900001");
+		//to.setShop_id("247900001");
+		to.setShop_id("810048382");
 		service.dishMenuGet(to);
 		//service.dishGet(to);
 	}

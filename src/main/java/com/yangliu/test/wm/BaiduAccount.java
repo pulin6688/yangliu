@@ -309,8 +309,89 @@ public class BaiduAccount {
 
 
     //生煎君API测试店
-    public static final  String account="64453";
-    public static final  String secret="c41d69962096744c";
+//    public static final  String account="64453";
+//    public static final  String secret="c41d69962096744c";
+
+//    //意象黎歌API测试店  15026887619727
+//    public static final  String account="64522";
+//    public static final  String secret="03a1bcc1e84d7dbc";
+
+
+    //印象麦品API测试店  15029369630401
+//    public static final  String account="64385";
+//    public static final  String secret="096c7d9ff8a2162f";
+
+    // 楼兰新疆主题餐厅API测试店
+//    public static final  String account="64387";
+//    public static final  String secret="2dc79924b8b5c72c";
+
+    //麦当劳(长沙)API测试店 15034724630118
+//    public static final  String account="64364";
+//    public static final  String secret="3490fb7f29cb200c";
+
+
+
+    //好粥道API测试店 15035552789418
+//    public static final  String account="64366";
+//    public static final  String secret="96620db5b9c34fd7";
+
+
+    //齐旺披萨API测试店  15035558323765
+    //public static final  String account="64368";
+    //public static final  String secret="f802607b6aaa6a3d";
+
+
+    //首尔798API测试店  15035566183324
+//    public static final  String account="64370";
+//    public static final  String secret="a9687d622215948c";
+
+
+
+    //首尔798API测试店  15035575833098
+//    public static final  String account="64379";
+//    public static final  String secret="65bb5746519d43ab";
+
+
+
+//    //益尚堂API测试店  15039001042067
+//   public static final  String account="64336";
+//   public static final  String secret="bc2ecf3dc4e7c057";
+
+
+//    //贝莉美莓API测试店 15040780853079
+//    public static final  String account="64303";
+//    public static final  String secret="e60cb9e05b17e409";
+
+
+//    //盈佰客浏阳蒸菜API测试店 15040784720973
+//    public static final  String account="64306";
+//    public static final  String secret="79a7afcbb3b60146";
+
+
+
+//    //千色色沙拉API测试店 15040789594086
+//    public static final  String account="64307";
+//    public static final  String secret="066fd091bc714c63";
+
+//    //千色色沙拉API测试店 15040793563253
+//    public static final  String account="64308";
+//    public static final  String secret="227cda545e532948";
+
+
+//    //La Tercera餐吧API测试店 15040797083508
+//    public static final  String account="64320";
+//    public static final  String secret="2abb6c0fb881b4e4";
+
+
+    //花少爷API测试店 15040800647452
+    public static final  String account="64321";
+    public static final  String secret="6166f44708d035a2";
+
+
+
+
+
+
 
 
 

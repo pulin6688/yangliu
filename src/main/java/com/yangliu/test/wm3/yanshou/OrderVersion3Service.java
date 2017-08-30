@@ -30,16 +30,16 @@ public class OrderVersion3Service {
 	public static void main(String[] args){
 		OrderVersion3Service service = new OrderVersion3Service();
 
-		String order_id="15022675491183";
+		String order_id="15040800647452";
 
 		OrderVersion3 t = new OrderVersion3();
 		t.setOrder_id(order_id);
 		//service.orderStatusGet(t);
-		//service.orderConfirm(t);//确认订单
+		service.orderConfirm(t);//确认订单
 
 
 		try {
-			Thread.sleep(1000*1);
+			Thread.sleep(1000*15);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
